@@ -1,0 +1,179 @@
+:root {
+    --icon-color-laptop: #FF6B6B;     /* Warm Red */
+    --icon-color-cursor: #4ECDC4;     /* Teal */
+    --icon-color-seo: #F7B801;        /* Yellow */
+    --icon-color-google: #51C2D5;     /* Light Blue */
+    --icon-color-instagram: #C38D9E;  /* Dusty Pink */
+    --icon-color-video: #F8A978;      /* Peach */
+    --hover-bg-color: rgba(249, 155, 125, 0.1);  /* Light hover background */
+}
+
+.icon-wrapper {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.icon-wrapper:hover {
+    background-color: var(--hover-bg-color); /* Light background on hover */
+    transform: scale(1.05); /* Slightly scale the entire card */
+}
+
+.icon-wrapper .icon {
+    transition: transform 0.3s ease;
+}
+
+.icon-wrapper:hover .icon {
+    transform: scale(1.2); /* Scale the icon slightly on hover */
+}
+
+.icon-laptop {
+    color: var(--icon-color-laptop);
+}
+
+.icon-cursor {
+    color: var(--icon-color-cursor);
+}
+
+.icon-seo {
+    color: var(--icon-color-seo);
+}
+
+.icon-google {
+    color: var(--icon-color-google);
+}
+
+.icon-instagram {
+    color: var(--icon-color-instagram);
+}
+
+.icon-video {
+    color: var(--icon-color-video);
+}
+
+
+
+
+
+
+/* MAIN */
+.title {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 800; 
+    font-size: 2em; 
+    text-align: center; 
+    padding: 40px 40px 0; 
+}
+
+.subtitle {
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    text-align: center;
+    margin: 0px 20px 20px;
+}
+
+.join-btn {
+    display: block;
+    margin: 20px auto; 
+    padding: 5px 10px;
+    background-color: rgb(154,214,105);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 16px;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    font-size: 1em;
+    width: fit-content; /* Ajusta el ancho al contenido del botón */
+}
+
+
+.join-btn:hover {
+    background-color: #58a0b0;
+}
+
+.h-container{
+    text-align: center;
+    margin: auto;
+    margin-top: 2em;
+}
+
+h2 {
+    font-weight: 800;
+    font-size: 3em;
+    line-height: 0.8;
+}
+
+h3 {
+    font-weight: 500;
+    font-size: 2em;
+    text-align: center;
+
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Desplaza el elemento ligeramente hacia abajo */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Transición suave */
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Coloca el elemento en su lugar original */
+}
+
+/* Banner */
+.img-banner{
+    width: 60%;
+}
+
+.image-container {
+    width: 100vw; /* Ocupa el 100% del ancho de la ventana */
+    height: auto; /* Altura automática basada en el contenido */
+    max-height: 400px; /* Fija la altura máxima de la imagen */
+    overflow: hidden; /* Oculta cualquier parte de la imagen que exceda del contenedor */
+}
+
+.image-container img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* Ajusta la altura para que coincida con el contenedor */
+    object-fit: cover; /* Mantiene las proporciones y ajusta la imagen sin deformarse */
+    object-position: center; /* Centra el contenido de la imagen (en este caso, el mundo) */
+}
+
+.card{
+    background: RGB(237 242 237);
+    width: 20rem;
+    border:none;
+    border-radius: 0%;
+    
+}
+.card-body i{
+    font-size: 3em;
+}
+
+
+footer {
+    background-color: black;
+}
+footer a {
+    text-decoration: none;
+}
+
+@media screen and (min-width:992px){
+li.nav-item.dropdown {
+    position: static !important;
+}
+
+    .dropdown-menu{
+        width:100vw;
+        position:absolute;
+        left:0;
+        right:0;
+    }
+    .dropdown-menu .col-sm-6:nth-child(1) a:hover .d-flex {
+        background: red;
+    }
+    .dropdown-menu a .d-flex{
+    transition: all 0.4s;
+        }
+}

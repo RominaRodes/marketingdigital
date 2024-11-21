@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'landing/styles/index3.css' %}">
+    <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+    {% load i18n %}
+    <title>Marketing para Turismo</title>
+</head>
+
+
+<body class="poppins-regular">
+    <header class="sticky-top bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container-fluid">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'landing/img/logo.png' %}" alt="Logo" width="120">
+                </a>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="navbar-toggler menu-toggle" id="mobile-menu" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                    <ul class="navbar-nav nav-underline">
+                        <li class="nav-item d-lg-none">
+                            <form action="{% url 'set_language' %}" method="post">
+                                {% csrf_token %}
+                                <div class="input-group mb-3">
+                                    <select name="language" class="form-select form-select-sm">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% for lang in LANGUAGES %}
+                                        <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>
+                                            {{
+                                            lang.1 }}</option>
+                                        {% endfor %}
+                                    </select>
+                                    <button class="btn btn-custom" type="submit" id="button-addon1"><i
+                                            class="fa-solid fa-check"></i></button>
+                                </div>
+                            </form>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">{% trans "Nosotros" %}</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Servicios
+                            </a>
+                            <div class="dropdown-menu p-2 border-0 shadow">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-laptop"><i
+                                                        class="fas fa-laptop"></i></div>
+                                                <div class="text px-3">{% trans "Desarrollo Web" %}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-cursor"><i
+                                                        class="fas fa-i-cursor"></i></div>
+                                                <div class="text px-3">{% trans "Investigación de Palabras Clave" %}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-seo"><i
+                                                        class="fas fa-arrows-to-circle"></i></div>
+                                                <div class="text px-3">{% trans "SEO & Contenido" %}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-google"><i
+                                                        class="fa-brands fa-google"></i></div>
+                                                <div class="text px-3">{% trans "Google Ads" %}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-instagram"><i
+                                                        class="fa-brands fa-instagram"></i></div>
+                                                <div class="text px-3">{% trans "Community Management" %}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <a href="#" class="text-dark text-decoration-none">
+                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
+                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-video"><i
+                                                        class="fas fa-film"></i>
+                                                </div>
+                                                <div class="text px-3">{% trans "Edición de Videos" %}</div>
+                                            </div>
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#blog">{% trans "Blog" %}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">{% trans "Contacto" %}</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Language Selector on the Right Side -->
+                <div class="d-none d-lg-block">
+                    <li class="nav-item dropdown list-unstyled">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            {% get_current_language as LANGUAGE_CODE %}
+                            {{ LANGUAGE_CODE|upper }}
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                            {% get_available_languages as LANGUAGES %}
+                            {% for lang in LANGUAGES %}
+                            <li>
+                                <a class="dropdown-item" href="?language={{ lang.0 }}">
+                                    {{ lang.1 }}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<div class="image-container">
+    <img src="{% static 'landing/img/iso4.png' %}" alt="world banner">
+    <h1 class="title">Marketing Digital para el sector turístico!</h1>
+    <div class="light-circles">
+        <!-- Círculos iniciales -->
+        <div class="light-circle circle1"></div>
+        <div class="light-circle circle2"></div>
+        <div class="light-circle circle3"></div>
+
+        <!-- Nuevos círculos adicionales -->
+        <div class="light-circle circle4"></div>
+        <div class="light-circle circle5"></div>
+        <div class="light-circle circle6"></div>
+    </div>
+</div>
+
+
+<section class="marketing-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center">
+                <!-- Icon on the left -->
+                <img src="{% static 'landing/img/megafono.webp' %}" alt="Marketing Icon" class="marketing-icon">
+            </div>
+            <div class="col-md-6">
+                <!-- Text on the right -->
+                <h2 class="section-title">Tu negocio es único y tu marketing también debe serlo.</h2>
+                <p class="section-description">
+                    "Nos dedicamos a entender tus necesidades para diseñar una <b>estrategia de
+                        marketing digital a medida</b>. Desde el diseño de sitios web especializados hasta la gestión
+                    integral de campañas, ejecutamos cada fase de manera estratégica. Evaluamos y optimizamos
+                    continuamente
+                    los resultados para asegurar que tu negocio destaque y tenga un crecimiento sostenible y efectivo."
+                </p>
+                <a href="#contact" class="btn btn-primary">Contactanos</a>
+            </div>
+        </div>
+    </div>
+</section>
+    <main class="container my-5 py-5">
+     
+
+
+        <div class="mision">
+            <h2 class="subtitle poppins pb-3">{% trans "En <b>PinItGrowth</b>, creemos que tu negocio es único y tu marketing también debe serlo." %}</h2>
+            <h5 class='my-5'> {% trans "Nos dedicamos a entender tus necesidades para diseñar una <b>estrategia de
+                    marketing digital a medida</b>. Desde el diseño de sitios web especializados hasta la gestión
+                integral de campañas, ejecutamos cada fase de manera estratégica. Evaluamos y optimizamos continuamente
+                los resultados para asegurar que tu negocio destaque y tenga un crecimiento sostenible y efectivo."%}
+            </h5>
+            <a href="#join" class="join-btn my-5">{% trans "CONTACTANOS" %}</a>
+        </div>
+
+        <div class="container my-5 p-5 cards-section">
+            <h3 class="fade-in my-5">{% trans "Servicios ofrecidos" %}</h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-2 my-5">
+                <div class="col">
+                    <div class="card card1 p-2 mx-auto">
+                        <div class="card-body">
+                            <i class="fa-solid fa-laptop"></i>
+                            <h5 class="card-title text-center">{% trans "Desarrollo Web" %}</h5>
+                            <p class="card-text">{% trans "Diseños únicos y optimizados para convertir visitantes en
+                                clientes. Nuestro equipo se encarga de cada detalle, asegurando que tu sitio web cuente
+                                la historia de tu marca y te diferencie de la competencia." %}</p>
+                                <div class="d-grid gap-2 col-8 mx-auto">  
+                                    <a href="#" class="card-link"><button class="btn btn-mas-info rounded-pill">{% trans "Mas Info " %}</button></a>
+                                </div>
+                                </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card2 p-4 mx-auto">
+                        <div class="card-body text-left">
+                            <i class="fa-solid fa-i-cursor"></i>
+                            <h5 class="card-title">{% trans "Palabras claves" %}</h5>
+                            <p class="card-text">{% trans "Identificamos las palabras clave que conectan con tu
+                                audiencia ideal, optimizando tu contenido para maximizar tu visibilidad y reducir costos
+                                en campañas PPC." %}</p>
+                            <a href="#" class="card-link"><button class="btn btn-mas-info">{% trans "Mas Información " %}</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card3 p-4 mx-auto">
+                        <div class="card-body text-left">
+                            <i class="fa-solid fa-arrows-to-circle"></i>
+                            <h5 class="card-title">{% trans "SEO & Contentido" %}</h5>
+                            <p class="card-text">{% trans "Aparece en los primeros resultados de búsqueda y haz que tu
+                                contenido destaque. Desarrollamos estrategias de SEO que garantizan que tu negocio no
+                                pase desapercibido." %}</p>
+                            <a href="#" class="card-link"><button class="btn btn-mas-info">{% trans "Mas Información " %}</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card4 p-4 mx-auto">
+                        <div class="card-body text-left">
+                            <i class="fa-brands fa-google icon-google"></i>
+                            <h5 class="card-title">{% trans "Google Ads" %}</h5>
+                            <p class="card-text">{% trans "Consigue resultados inmediatos con campañas de Google Ads
+                                bien planificadas. Optimizamos tus anuncios para alcanzar a más personas y reducir
+                                costos." %}</p>
+                            <a href="#" class="card-link"><button class="btn btn-mas-info">{% trans "Mas Información " %}</button></a>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card5 p-4 mx-auto">
+                        <div class="card-body text-left">
+                            <i class="fa-brands fa-instagram icon-instagram"></i>
+                            <h5 class="card-title">{% trans "Comunity Management" %}</h5>
+                            <p class="card-text">{% trans "Construimos comunidades digitales que conectan con tus
+                                clientes, creando relaciones duraderas y mejorando la percepción de tu marca." %}</p>
+                            <a href="#" class="card-link"><button class="btn btn-mas-info">{% trans "Mas Información " %}</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card card6 p-4 mx-auto">
+                        <div class="card-body text-left">
+                            <i class="fa-solid fa-film"></i>
+                            <h5 class="card-title">{% trans "Edición de Videos" %}</h5>
+                            <p class="card-text">{% trans "Atrae a tu audiencia con contenido visual atractivo. Editamos
+                                y producimos videos que resalten los mejores aspectos de tu negocio." %}</p>
+                            <a href="#" class="card-link"><button class="btn btn-mas-info">{% trans "Mas Información " %}</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <div class="container p-5">
+            <div class="row">
+                    <div class="text-center m-4">
+                        <h3>¿Necesitas una estrategia que funcione? </h3>
+                        <h5 class="mt-4" >Empezá hoy!</h5>
+                        <button class="btn btn-footer rounded-pill mt-4">Hablemos!</button>
+                    </div>
+        </div>
+
+        <div class="row justify-content-between align-items-center text-center gx-5 mt-5">
+            <div class="col-md-4">
+                <div class="p-3">
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static 'landing/img/logo.png' %}" alt="Logo" width="120">
+                    </a>
+                </div>
+            </div>
+            <!-- Phone and Email -->
+            <div class="col-md-4">
+                <div class="contact">
+                    <a href="https://wa.me/5491150156665" target="_blank" class="d-block text-light"><i
+                            class="fa-brands fa-whatsapp"></i> +54 9 11 50 15 66
+                        65</a>
+                    <a href="mailto:growthtravels@gmail.com" class="d-block text-light"><i
+                            class="fa-regular fa-envelope"></i>growthtravels@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Social Media Icons -->
+            <div class="col-md-4">
+                <div class="p-3">
+                    <p class="seguinos">{% trans "Seguinos" %}</p>
+                    <a href="https://facebook.com" target="_blank" class="text-light me-3">
+                        <i class="fab fa-facebook fa-2x"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="text-light me-3">
+                        <i class="fab fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="text-light me-3">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="text-center p-5">
+            <hr>
+            <small>&copy; 2024 - PINITGROWTH - TODOS LOS DERECHOOS RESERVADOS.</small>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Mostrar u ocultar el menú principal en móvil
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('open');
+            });
+
+        })
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible'); // Añade la clase para hacer visible
+                    } else {
+                        entry.target.classList.remove('visible'); // Elimina la clase cuando se sale de pantalla
+                    }
+                });
+            }, {
+                threshold: 0.5 // El 50% del elemento debe ser visible antes de activar
+            });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>
