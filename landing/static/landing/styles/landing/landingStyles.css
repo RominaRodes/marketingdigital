@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Esto evitará que haya desbordamiento horizontal */
+}
+
+
+:root{
+    --primary-color: #C4E2F1;
+    --footer-color:  #012F41;
+    --card-bc-color:  #EDF2ED;
+    --card-bc-color2:rgb(245,245,245);
+    --contact-buttons:#F99B7D;
+    --hover: rgb(8,217,214);
+    --text: #FFFFFF;
+    --icon-text:#f1f1f1;
+    --black: black;
+    --icon-color-laptop: #FF6B6B;     /* Warm Red */
+    --icon-color-cursor: #4ECDC4;     /* Teal */
+    --icon-color-seo: #F7B801;        /* Yellow */
+    --icon-color-google: #51C2D5;     /* Light Blue */
+    --icon-color-instagram: #C38D9E;  /* Dusty Pink */
+    --icon-color-video: #F8A978;      /* Peach */
+    --hover-bg-color: rgb(245,245,245); 
+    }
+
+
+/* Estilos generales y base para mobile-first */
+.text-justify {
+    text-align: justify;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: var(--text);
+}
+
+.nav-item {
+    font-size: 0.75rem;
+}
+
+.nav-link {
+    color: var(--black);
+}
+
+ul.dropdown-menu {
+    font-size: 1em;
+    border: none;
+    border-radius: 0;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60px;
+    height: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: var(--black);
+    transition: all 0.8s ease;
+}
+
+/* Estilos específicos para mobile (máx-width: 990px) */
+@media (max-width: 990px) {
+    #mobile-menu.navbar-toggler {
+        border: none;
+    }
+
+    .menu-toggle.open .bar:first-child {
+        transform: rotate(210deg);
+        position: relative;
+        top: 3px;
+    }
+
+    .menu-toggle.open .bar:last-child {
+        transform: rotate(-210deg);
+        position: relative;
+        top: -8px;
+    }
+
+    .navbar-nav {
+        height: 100vh;
+        margin-top: 2em;
+    }
+
+    .navbar-nav .nav-item form {
+        width: fit-content;
+        margin: auto;
+    }
+
+    .btn-custom {
+        background-color: var(--hover);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-decoration: none;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-custom:hover {
+        background-color: #ff5500; /* Efecto hover */
+    }
+
+    #navbarNav > ul > li.nav-item.d-lg-none > form > div > select {
+        margin-right: 0;
+    }
+}
+
+/* Estilos para pantallas grandes (mín-width: 992px) */
+@media screen and (min-width: 992px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1rem;
+    }
+
+    li.nav-item.dropdown {
+        position: static !important;
+    }
+
+    .dropdown-menu-lg {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+    .dropdown-menu a .d-flex {
+        transition: all 0.4s;
+    }
+
+    /* Ajustes adicionales para layout y estructura */
+    .navbar-nav {
+        display: flex;
+        height: auto; /* Se asegura de que no use la altura de mobile */
+        margin: 0;
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultar en pantallas grandes */
+    }
+
+    .btn-custom {
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+}

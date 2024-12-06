@@ -15,18 +15,21 @@
     rel="stylesheet">
     <link rel="stylesheet" href="{% static 'landing/styles/styles_index.css' %}">
     <script src="https://kit.fontawesome.com/4c9feabc71.js" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+
     {% load i18n %}
     <title>Marketing para Turismo</title>
 </head>
 
 
-<body class="poppins-regular">
+<body>
     <header class="sticky-top bg-light">
         <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
             <div class="container-fluid">
                 <!-- Logo -->
                 <a class="navbar-brand" href="#">
-                    <img src="{% static 'landing/img/logo_transparent.png' %}" alt="Logo" width="120">
+                    <img src="{% static 'landing/img/logotravel.png' %}" alt="logo" width="120">
                 </a>
     
                 <!-- Mobile Menu Toggle -->
@@ -48,8 +51,7 @@
                                         {% get_current_language as LANGUAGE_CODE %}
                                         {% get_available_languages as LANGUAGES %}
                                         {% for lang in LANGUAGES %}
-                                        <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>{{
-                                            lang.1 }}</option>
+                                        <option value="{{ lang.0 }}" {% if lang.0 == LANGUAGE_CODE %}selected{% endif %}>{{ lang.1 }}</option>
                                         {% endfor %}
                                     </select>
                                     <button class="btn btn-custom" type="submit" id="button-addon1"><i
@@ -57,15 +59,13 @@
                                 </div>
                             </form>
                         </li>
-    
-                        <li class="nav-item">
-                            <a class="nav-link" href="nosotros">{% trans "Nosotros" %}</a>
-                        </li>
-    
+                            <li class="nav-item">
+                                <a class="nav-link" href="#pricing">{% trans "HOW WE WORK" %}</a>
+                            </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Servicios
+                                SERVICES
                             </a>
                             <div class="dropdown-menu p-2 border-0 shadow">
                                 <div class="row">
@@ -116,27 +116,16 @@
                                                 <div class="text px-3">{% trans "Community Management" %}</div>
                                             </div>
                                         </a>
-                                    </div>
-    
-                                    <div class="col-sm-6">
-                                        <a href="#" class="text-dark text-decoration-none">
-                                            <div class="d-flex p-2 align-items-center rounded-3 icon-wrapper">
-                                                <div class="icon fs-3 fs-sm-1 px-3 rounded-3 icon-video"><i class="fas fa-film"></i>
-                                                </div>
-                                                <div class="text px-3">{% trans "Edición de Videos" %}</div>
-                                            </div>
-                                        </a>
-                                    </div>
-    
+                                    </div>   
     
                                 </div>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#blog">{% trans "Blog" %}</a>
+                            <a class="nav-link" href="#pricing">{% trans "PRICING" %}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">{% trans "Contacto" %}</a>
+                            <a class="nav-link" href="#faq">{% trans "FAQ'S" %}</a>
                         </li>
                     </ul>
                 </div>
@@ -149,7 +138,7 @@
                             {% get_current_language as LANGUAGE_CODE %}
                             {{ LANGUAGE_CODE|upper }}
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end" aria-labelledby="languageDropdown">
                             {% get_available_languages as LANGUAGES %}
                             {% for lang in LANGUAGES %}
                             <li>
@@ -165,102 +154,330 @@
         </nav>
     </header>
 
-<div class="image-container">
-    <img src="{% static 'landing/img/viajero2.jpg' %}" alt="world banner">
-    <h1 class="title">Marketing Digital para el sector turistico!</h1>
+<section class="hero pt-md-5"> 
+    <div class="container">
+        <h1 class="title text-center py-3">Get Found,<br> Get Booked,<br>Grow your business!</h1>
 
-</div>
-</div>
+        <div class="mision py-3">
+            <h2 class="subtitle pb-3">{% trans "All-in-one digital solutions for Dominican Republic tourism  businesses starting at just $1,000!" %}</h2>
+            <a href="#join" class="join-btn my-5">{% trans "GET STARTED FOR FREE" %}</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="specialize-section py-3">
+    <div class="title-container container-fluid">
+        <h4 class="text-center py-3">We specialize in</h4>
+    </div>
+    <div class="logo-container">
+        <div class="logos">
+            <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
+            <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
+            <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
+            <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
+            <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
+        </div>
+    </div>
+</section>
 
 
-        <main class="container my-5 py-5"> 
-
-            <div class="mision">
-            <h2 class="subtitle poppins pb-3">{% trans "En <b>PinItGrowth</b>, creemos que tu negocio es único y tu marketing también debe serlo." %}</h2>
-            <h5 class='my-5'> {% trans "Nos dedicamos a entender tus necesidades para diseñar una <b>estrategia de marketing digital a medida</b>. Desde el diseño de sitios web especializados hasta la gestión integral de campañas, ejecutamos cada fase de manera estratégica. Evaluamos y optimizamos continuamente los resultados para asegurar que tu negocio destaque y tenga un crecimiento sostenible y efectivo."%}</h5> 
-            <a href="#join" class="join-btn my-5">{% trans "CONTACTANOS" %}</a>              
-            </div>
-        
-            <div class="container my-5 p-5 cards-section">
-                <h3 class="fade-in my-5">{% trans "Servicios ofrecidos" %}</h3>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5 my-5">
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-solid fa-laptop"></i>
-                                <h5 class="card-title">{% trans "Desarrollo Web" %}</h5>
-                                <p class="card-text">{% trans "Diseños únicos y optimizados para convertir visitantes en clientes. Nuestro equipo se encarga de cada detalle, asegurando que tu sitio web cuente la historia de tu marca y te diferencie de la competencia." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas Información" %}</a>
+<section class="py-5 bg-light">
+                <div class="container text-center">
+                    <h3 class="mb-4">Why Travel Growth?</h3>
+                    <div class="row">
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body align-content-center">
+                                    <h5 class="card-title text-center fw-bold">Maximize Visibility</h5>
+                                    <p class="card-text text-justify">Get your business in front of millions of travelers searching for unique
+                                        Dominican Republic experiences.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-        
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-solid fa-i-cursor"></i>
-                                <h5 class="card-title">{% trans "Palabras claves" %}</h5>
-                                <p class="card-text">{% trans "Identificamos las palabras clave que conectan con tu audiencia ideal, optimizando tu contenido para maximizar tu visibilidad y reducir costos en campañas PPC." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas Información" %}</a>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body align-content-center">
+                                    <h5 class="card-title text-center fw-bold">Boost Bookings</h5>
+                                    <p class="card-text text-justify">Turn clicks into confirmed reservations with data-driven campaigns designed
+                                        to deliver results.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-        
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-solid fa-arrows-to-circle"></i>
-                                <h5 class="card-title">{% trans "SEO & Contentido" %}</h5>
-                                <p class="card-text">{% trans "Aparece en los primeros resultados de búsqueda y haz que tu contenido destaque. Desarrollamos estrategias de SEO que garantizan que tu negocio no pase desapercibido." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas Información" %}</a>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body align-content-center">
+                                    <h5 class="card-title text-center fw-bold">Personalized Strategies</h5>
+                                    <p class="card-text text-justify">Whether you run a hotel, restaurant, tour, or attraction, we create
+                                        solutions tailored to your goals.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-        
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-brands fa-google"></i>
-                                <h5 class="card-title">{% trans "Google Ads" %}</h5>
-                                <p class="card-text">{% trans "Consigue resultados inmediatos con campañas de Google Ads bien planificadas. Optimizamos tus anuncios para alcanzar a más personas y reducir costos." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas  Información" %}</a>
-
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-brands fa-instagram"></i>
-                                <h5 class="card-title">{% trans "Comunity Management" %}</h5>
-                                <p class="card-text">{% trans "Construimos comunidades digitales que conectan con tus clientes, creando relaciones duraderas y mejorando la percepción de tu marca." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas Información" %}</a>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="col">
-                        <div class="card p-4 mx-auto">
-                            <div class="card-body text-left">
-                                <i class="fa-solid fa-film"></i>
-                                <h5 class="card-title">{% trans "Edición de Videos" %}</h5>
-                                <p class="card-text">{% trans "Atrae a tu audiencia con contenido visual atractivo. Editamos y producimos videos que resalten los mejores aspectos de tu negocio." %}</p>
-                                <a href="#" class="card-link">{% trans "Mas Información " %}</a>
+                        <div class="col-md-6 col-lg-3 mb-4">
+                            <div class="card border-0 shadow-sm h-100">
+                                <div class="card-body align-content-center">
+                                    <h5 class="card-title text-center fw-bold">Effortless Implementation</h5>
+                                    <p class="card-text text-justify">Focus on your business while we handle the setup and execution seamlessly.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+</section>
+
+<!-- <section class="py-5" id="why-travel-growth" >
+    <div class="container">
+        <h3 class="text-center mb-5">{% trans "Why Travel Growth?" %}</h3>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'landing/img/visibility.jpg' %}" alt="{% trans 'Maximize Visibility' %}"
+                    class="img-fluid">
             </div>
+            <div class="col-md-6">
+                <h5 class="fw-bold">{% trans "Maximize Visibility" %}</h5>
+                <p>{% trans "Get your business in front of millions of travelers searching for unique Dominican Republic experiences." %}</p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'landing/img/bookings.jpg' %}" alt="{% trans 'Boost Bookings' %}"
+                    class="img-fluid">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h5 class="fw-bold">{% trans "Boost Bookings" %}</h5>
+                <p>{% trans "Turn clicks into confirmed reservations with data-driven campaigns designed to deliver results." %}</p>
+            </div>
+        </div>
+        <div class="row align-items-center mb-4">
+            <div class="col-md-6">
+                <img src="{% static 'landing/img/strategies.jpg' %}" alt="{% trans 'Personalized Strategies' %}"
+                    class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <h5 class="fw-bold">{% trans "Personalized Strategies" %}</h5>
+                <p>{% trans "Whether you run a hotel, restaurant, tour, or attraction, we create solutions tailored to your goals." %}</p>
+            </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-md-6 order-md-2">
+                <img src="{% static 'landing/img/implementation.jpg' %}" alt="{% trans 'Effortless Implementation' %}"
+                    class="img-fluid">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <h5 class="fw-bold">{% trans "Effortless Implementation" %}</h5>
+                <p>{% trans "Focus on your business while we handle the setup and execution seamlessly." %}</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+<section class="py-5 bg-light" id="pricing">
+    <div class="container">
+        <h3 class="mb-5 text-center fw-bold">{% trans "Choose Your Plan" %}</h3>
+        <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 d-flex flex column">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-header-flex mb-3">
+                                <h4 class="text-primary fw-bold fs-3 text-center">{% trans "Travel Growth Kickstart" %}</h4>
+                    <p class="text-center fw-bold">{% trans "Basic Plan" %}</p>
+                    <p  class=" text-center">{% trans "Perfect for businesses starting to enhance their online presence and attract more travellers!" %}</p>
+                    <h5 class="fw-bold  text-center">{% trans "Cost: $1,000 Set up" %}</h5>   
+                    </div>
         
-        </main>
-        <footer>
+                    <hr>
+                    <div class="flex-fill">
+        <h5 class="fw-bold  text-center">{% trans "What's included:" %}</h5>
+                    <ul class="list-unstyled">
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "TripAdvisor Business Listing Creation" %}</p>
+                            <ul>
+                                <li>{% trans "Professional setup of your business profile." %}</li>
+                                <li>{% trans "Optimized to attract travellers with high-quality descriptions." %}</li>
+                                <li>{% trans "Category tagging and image uploads for better visibility." %}</li>
+                            </ul>
+                        </li>
+                        
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "Viator Product Creation" %}</p>
+                            <ul>
+                                <li>{% trans "Set up and optimize one tour or activity on Viator." %}</li>
+                                <li>{% trans "Includes detailed descriptions, pricing, photos, and booking information." %}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                    
+                    <!-- Botón -->
+                    <div class="my-3 text-center">
+                        <button class="btn btn-primary btn-sm">{% trans "BOOK NOW" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 d-flex flex column">
+                <div class="card-body d-flex flex-column">
+                    <div class="card-header-flex mb-3">
+                    <h4 class="text-primary fw-bold fs-3  text-center">{% trans "Growth Package" %}</h4>
+                    <p class="text-center fw-bold">{% trans "Travel Growth Kickstart + TripAdvisor Ad Express" %}</p>
+                    <p class="text-center">{% trans "Ideal for businesses ready to elevate their exposure and engage more effectively with potential customers!" %}</p>
+                    <h5 class="fw-bold text-center">{% trans "Cost: $1,000 setup + $500 monthly fee" %}</h5>
+                    </div>
+                    <hr>
+
+        <div class="flex-fill">
+        <h5 class="fw-bold text-center">{% trans "What's included:" %}</h5>
+                    <ul class="list-unstyled">
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "Includes the Basic Package:" %}</p>
+                            <ul>
+                                <li>{% trans "TripAdvisor Business Listing Creation" %}</li>
+                                <li>{% trans "Viator Product Creation" %}</li>
+                            </ul>
+                        </li>
+
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "Optional Add-On: TripAdvisor Ad Express - Listing Booster Campaign" %}</p>
+                            <ul>
+                                <li>{% trans "Increased Visibility: Target travellers searching for services in your location." %}</li>
+                                <li>{% trans "Custom Campaign Management: Tailored ad campaigns for your audience (local or international)." %}</li>
+                                <li>{% trans "Monthly Performance Insights: Understand your ad performance with detailed reports." %}</li>
+                            </ul>
+                        </li>
+                    </ul>
+            </div>
+                    <div class="my-3 text-center">
+                        <button class="btn btn-primary btn-sm">{% trans "BOOK NOW" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card border-0 shadow-sm h-100 d-flex flex column">
+                <div class="card-body d-flex flex-column">
+                                <div class="card-header-flex mb-3">
+                                <h4 class="text-primary fw-bold fs-3 text-center">{% trans "Pro Package" %}</h4>
+                    <p class="text-center fw-bold">{% trans "Travel Growth Kickstart + Website + Advanced Ad Management" %}</p>
+                    <p class="text-center">{% trans "For businesses seeking robust growth through professional management and strategic advertising!" %}</p>
+                    <h5 class="fw-bold text-center">{% trans "Cost: $2,500" %}</h5>
+                                </div>
+                    <hr>
+
+                <div class="flex-fill">
+                    <h5 class="fw-bold text-center">{% trans "What's included:" %}</h5>
+                    <ul class="list-unstyled">
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "Core Features:" %}</p>
+                            <ul>
+                                <li>{% trans "TripAdvisor Business Listing Creation" %}</li>
+                                <li>{% trans "Viator Product Creation" %}</li>
+                                <li>{% trans "Landing Page Development" %}</li>
+                                <li>{% trans "TripAdvisor Ad Express - Listing Booster Campaign" %}</li>
+                            </ul>
+                        </li>
+
+                        <li class="mt-3">
+                            <p class="fw-bold mb-0 ms-2">{% trans "Enhanced Pro Features:" %}</p>
+                            <ul>
+                                <li>{% trans "Hands-Free Setup: Our team manages all aspects of your ad campaign." %}</li>
+                                <li>{% trans "Scalable Reach: Perfect for businesses looking to maximize visibility during peak seasons." %}</li>
+                                <li>{% trans "Expert Consultation: Ongoing access to guidance for continuous campaign optimization." %}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+
+                    <!-- Botón -->
+                    <div class="my-3 text-center">
+                        <button class="btn btn-primary btn-sm">{% trans "BOOK NOW" %}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+            </div>
+</section>
+
+
+<section class="faq-section container-fluid">
+    <div class=" faq-container">
+        <h3 class="text-center mb-5">{% trans "Frequently Asked Questions" %}</h3>
+
+        <!-- Pregunta 1 -->
+        <div class="faq-item">
+            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                <strong>{% trans "Why should I invest in a TripAdvisor Business Listing and Viator Product Creation?" %}</strong>
+                <span class="faq-chevron">
+                <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </button>
+            <div id="faqCollapse1" class="collapse faq-answer">
+                <p>{% trans "These platforms are trusted by millions of travelers worldwide. A professional presence increases visibility, builds trust, and drives bookings." %}</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="faq-item">
+            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                <strong>{% trans "What does the $500/month Ad Express service include?" %}</strong>
+                <span class="faq-chevron">
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </button>
+            <div id="faqCollapse2" class="collapse faq-answer">
+                <p>{% trans "Our Ad Express service includes custom ad creation, performance monitoring, and detailed monthly reporting. It’s a comprehensive solution to maximize your presence on TripAdvisor." %}</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="faq-item">
+            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                <strong>{% trans "Can I cancel the Ad Express service at any time?" %}</strong>
+                <span class="faq-chevron">
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </button>
+            <div id="faqCollapse3" class="collapse faq-answer">
+                <p>{% trans "Yes, we offer flexible terms. However, we recommend at least three months to see the full benefits of the campaign." %}</p>
+            </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="faq-item">
+            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                <strong>{% trans "What’s the difference between a business listing and an Ad Express campaign?" %}</strong>
+                <span class="faq-chevron">
+                    <i class="bi bi-caret-down-fill"></i>
+                </span>
+            </button>
+            <div id="faqCollapse4" class="collapse faq-answer">
+                <p>{% trans "A business listing establishes your presence on TripAdvisor and Viator. An Ad Express campaign enhances visibility by placing your business in front of more travelers actively searching for services." %}
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
             <div class="container p-5">
                 <div class="row">
                     <div class="text-center m-4">
-                        <h3>¿Necesitas una estrategia que funcione? </h3>
-                        <h5 class="mt-4">Empezá hoy!</h5>
-                        <button class="btn btn-footer rounded-pill mt-4">Hablemos!</button>
+                        <h3>{% trans "Transform Your Business." %}</h3>
+                        <h5 class="mt-4">{% trans "Let's work together" %}</h5>
+                        <button class="btn btn-footer rounded-pill mt-4">Get in touch!</button>
                     </div>
                 </div>
         
@@ -268,7 +485,7 @@
                     <div class="col-md-4">
                         <div class="p-3">
                             <a class="navbar-brand" href="#">
-                                <img src="{% static 'landing/img/logo.png' %}" alt="Logo" width="120">
+                                <img src="{% static 'landing/img/logotravel.png' %}" alt="Logo" width="120">
                             </a>
                         </div>
                     </div>
@@ -300,11 +517,11 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center p-5">
-                <hr>
+            <div class="text-center pt-5">
+          
                 <small>&copy; 2024 - PINITGROWTH - TODOS LOS DERECHOOS RESERVADOS.</small>
             </div>
-        </footer>
+</footer>
 
 
 
@@ -336,12 +553,54 @@
             
             fadeElements.forEach(el => observer.observe(el));
             });
-            </script>
+        </script>
+        <script>
+        document.querySelectorAll('.faq-question').forEach((button) => {
+            button.addEventListener('click', () => {
+            const isCollapsed = button.classList.contains('collapsed');
             
-        
-        
+            // Espera un pequeño retardo para sincronizar con la animación de Bootstrap
+            setTimeout(() => {
+            if (isCollapsed) {
+            button.classList.remove('collapsed');
+            } else {
+            button.classList.add('collapsed');
+            }
+            }, 50);
+            });
+            });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const logosContainer = document.querySelector('.logos');
+        let lastScrollTop = 0; // Para rastrear la posición del último scroll
+        let translateX = 0; // Para almacenar la posición actual del desplazamiento
+
+        window.addEventListener('scroll', () => {
+            const currentScrollTop = window.scrollY; // Posición actual del scroll
+            const delta = currentScrollTop - lastScrollTop; // Diferencia entre el último y el actual
+
+            // Log para depurar
+            console.log('Scroll detected!');
+            console.log('Delta:', delta);
+
+            // Si la diferencia es positiva, el usuario hace scroll hacia abajo (mover a la izquierda)
+            if (delta > 0) {
+                translateX -= 10; // Mueve los logos hacia la izquierda
+            }
+            // Si la diferencia es negativa, el usuario hace scroll hacia arriba (mover a la derecha)
+            else if (delta < 0) {
+                translateX += 10; // Mueve los logos hacia la derecha
+            }
+
+            // Aplica la transformación
+            logosContainer.style.transform = `translateX(${translateX}px)`;
+
+            // Actualiza la posición del último scroll
+            lastScrollTop = currentScrollTop;
+        });
+    });
 
 
+</script> 
 </body>
-
 </html>

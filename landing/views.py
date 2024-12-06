@@ -13,3 +13,6 @@ def landing2_view(request):
 def nosotros_view(request):
     
     return render(request, 'landing/index3.html')
+
+def coming_soon(request):
+    return render(request, 'landing/coming_soon.html')

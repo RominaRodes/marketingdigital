@@ -10,130 +10,10 @@ html, body {
     padding: 0;
     overflow-x: hidden; /* Esto evitará que haya desbordamiento horizontal */
 }
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
-}
-
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
-
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-}
-
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
-
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-
-.changa-one-regular {
-  font-family: "Changa One", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.changa-one-regular-italic {
-  font-family: "Changa One", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
 
 
 :root{
     --primary-color: #C4E2F1;
-  
     --footer-color:  #012F41;
     --card-bc-color:  #EDF2ED;
     --card-bc-color2:rgb(245,245,245);
@@ -151,31 +31,33 @@ html, body {
     --hover-bg-color: rgb(245,245,245); 
     }
 
+/*-------estilos generales-----------*/
+.text-justify{
+text-align: justify;
+}
 
+h3{
+    font-size: 3rem;
+}
 
-
+/*-------HEADER-----------*/
 header{
     position: sticky;
     top: 0;
     background : var(--text);
-
-
 } 
 
 .nav-item {
-    font-size: 1.2em;
-    font-weight: 600;
+    font-size: 0.75rem;
 }
- .nav-link{
-        color: var(--black);
+.nav-link{
+    color: var(--black);
     }
 ul.dropdown-menu{
     font-size: 1em;
     border:none;    
     border-radius: 0;
 }
-
-
 
 .icon-wrapper {
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -219,130 +101,160 @@ ul.dropdown-menu{
 }
 
 
-/* MAIN */
-.subtitle {
-    font-family: poppins;
-    font-weight: 600; 
-    font-size: 2em; 
-    text-align: center; 
-    color: var(--black);
+/*-----------------hero------------------- */
+
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    /* color:var(--text); */
 }
 
-h5 {
-    text-align: justify;
-    margin: 0px 20px 20px;
-    color:var(black);
+div.mision{
+    width: 90%;
+    margin: auto;
+}
+
+.subtitle {
+    font-size: 1.5rem; 
+    text-align: center; 
+    /* color:var(--text); */
 }
 
 .join-btn {
     display: block;
     margin: 20px auto; 
     padding: 10px 15px;
-    background-color: var(--contact-buttons);
+    background-color: var(--bs-blue);
     color: var(--text);
     text-decoration: none;
-    font-weight: 600;
     border-radius: 16px;
     transition: background-color 0.3s ease;
     text-align: center;
-    font-size: 1.2em;
-    width: fit-content; /* Ajusta el ancho al contenido del botón */
+    font-size: 1rem;
+    width: fit-content; 
 }
-
 
 .join-btn:hover {
     background-color: var(--hover);
 }
 
-.h-container{
-    text-align: center;
-    margin: auto;
-    margin-top: 2em;
+.card {
+    background: rgb(237,242,237);
 }
-
-
-
-h3 {
-    font-weight: 600;
-    font-size: 3em;
-    text-align: center;
-    color: var(--black);
-
+#why-travel-growth .container .row{
+    width:70%;
+    margin:auto;
 }
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px); /* Desplaza el elemento ligeramente hacia abajo */
-    transition: opacity 1s ease-out, transform 1s ease-out; /* Transición suave */
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0); /* Coloca el elemento en su lugar original */
-}
-
-
-/* Banner */
-.image-container {
-    position: relative;
-    width: 100%;
-    height: calc(100vh - 70px); /* Resta la altura del header */
+/*---------------specialize in section-------------------*/
+.specialize-section {
     overflow: hidden;
+    position: relative;
 }
 
-.image-container img {
-    object-fit: cover;
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+}
+
+.logos {
+    display: flex;
+    align-items: center;
+    transition: transform 0.1s linear; /* Transición suave para el movimiento */
+}
+
+.partner-logo {
+    height: 2rem;
+    margin: 0 20px;
+    object-fit: contain;
+}
+
+/*--------------PRICING SECTION----------------*/
+.card-header-flex {
+    flex-shrink: 0; /* Asegura que no se reduzca */
+    min-height: 200px; /* Ajusta el valor según el contenido esperado */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribuye los elementos uniformemente */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+hr {
+    margin-top: 0; /* Asegura que no haya un margen excesivo */
+    margin-bottom: 20px;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
     height: 100%;
 }
 
-.title {
-    position: absolute;
-    top: 50%;
-    left: 35%;
-    transform: translate(-50%, -50%);
-    font-size: 5rem;
-    color: var(--text);
-    font-weight: 800;
-    z-index: 2;
+.flex-fill {
+    flex-grow: 1; 
 }
 
-
-main{
-    background: var(--text);
-}
-div.mision{
-    width: 70%;
-    margin: auto;
+button.btn {
+    align-self: center;
+    margin-top: auto;
 }
 
-/*-------CARDS-------------------------*/
-.cards-section{
-    background: var(--text);
-}
-.card{
-    background: var(--card-bc-color2); 
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    border: none;
-    border-radius: 0%;
-}
-.card-body i{
-    font-size: 3em;
-    padding-bottom: 0.5em;
-    color: var(--hover);
-}
-.card-text {
-    color: var(--black);
+/*---------------FAQ-----------------*/
+/* General Section Styles */
+.faq-section {
+  padding: 3rem 1rem;
+  background-color: rgb(237,242,237);
 }
 
-.card-title{
-    font-weight: 800;
-    color:var(--black);
+.faq-container {
+  max-width: 70%;
+  margin: 0 auto;
 }
-.card a {
-    color: var(--hover);
+
+/* FAQ Item Styles */
+.faq-item {
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.faq-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Question Button Styles */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-question strong {
+  font-weight: bold;
+}
+
+/* Answer Styles */
+.faq-answer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
 /*---------------FOOTER---------------------------*/
 footer {
     background-color: var(--black);
@@ -380,13 +292,9 @@ footer div small{
 
 
 @media (max-width: 990px) {
-    html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* Esto también puede ayudar a evitar problemas de scroll lateral */
+    body{
+    background: blue;
 }
-
     /* Remove border from the mobile menu toggle */
     #mobile-menu.navbar-toggler {
         border: none;
@@ -462,8 +370,7 @@ li.nav-item.dropdown {
     position: static !important;
 }
 
-    .dropdown-menu{
-        width:100vw;
+    .dropdown-menu-lg{
         position:absolute;
         left:0;
         right:0;
