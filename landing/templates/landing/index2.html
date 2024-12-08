@@ -19,7 +19,7 @@
         rel="stylesheet">
 
     {% load i18n %}
-    <title>Marketing para Turismo</title>
+    <title>TravelGrowth</title>
 </head>
 
 
@@ -156,7 +156,7 @@
 
 <section class="hero pt-md-5"> 
     <div class="container">
-        <h1 class="title text-center py-3">Get Found,<br> Get Booked,<br>Grow your business!</h1>
+        <h1 class="title text-center py-3">Get Found, Get Booked,<br>Grow your business!</h1>
 
         <div class="mision py-3">
             <h2 class="subtitle pb-3">{% trans "All-in-one digital solutions for Dominican Republic tourism  businesses starting at just $1,000!" %}</h2>
@@ -170,16 +170,28 @@
     <div class="title-container container-fluid">
         <h4 class="text-center py-3">We specialize in</h4>
     </div>
-    <div class="logo-container">
+    <div class="logo-slider">
         <div class="logos">
             <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
             <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
             <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
             <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
             <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
+            <!-- Duplicated for infinite scroll effect -->
+            <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
+            <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
+            <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
+            <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
+            <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
+                <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
+                <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
+                <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
+                <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
+                <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
         </div>
     </div>
 </section>
+
 
 
 <section class="py-5 bg-light">
@@ -271,6 +283,68 @@
         </div>
     </div>
 </section> -->
+
+<section class="digital-marketing-journey py-5">
+    <div class="container text-center">
+        <h2 class="mb-4">Start Your Travel & Tourism Digital Marketing Journey</h2>
+        <p class="lead mb-4">
+            No matter the size of your business—whether you run a small family tour or a large-scale tourism operation—we dedicate
+            ourselves to crafting tailored strategies that fit your unique needs.
+        </p>
+        <p class="mb-4">
+            In today’s digital world, it’s essential to have a focused marketing approach. With so many platforms and touchpoints,
+            your strategy must be aligned and effective. That’s why we work closely with you to understand your goals and create
+            personalized solutions that deliver results.
+            Our three-step approach ensures your business builds a strong foundation, maximizes potential, and stays on
+            the path to success. Let’s work together to make your vision a reality.
+        </p>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+    </div>
+</section>
+
+<section class="steps-section py-5">
+    <div class="container">
+        <div class="row text-center w-100">
+            <!-- Step 1 -->
+            <div class="col-md-4 col-12 mb-4 mb-md-0 p-3 bg-dark text-light mx-md-2">
+                <div class="step">
+                    <h3 class="step-number">01.</h3>
+                    <h4 class="step-title">Discovery</h4>
+                    <p class="step-description">
+                        We start by auditing your business: Analize who your audience is, your competition and the
+                        performance of your current marketing. This foundation is essential for creating a successful
+                        long-term strategy.
+                    </p>
+                </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="col-md-4 col-12 mb-4 mb-md-0 p-3 bg-dark text-light mx-md-2">
+                <div class="step">
+                    <h3 class="step-number">02.</h3>
+                    <h4 class="step-title">Awareness</h4>
+                    <p class="step-description">
+                        We enhance your online visibility by building your brand and earning customer trust. This phase
+                        focuses on growing your online presence, email lists, social followers, and website visits to ensure your target
+                        audience knows you.
+                    </p>
+                </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="col-md-4 col-12 p-3 bg-dark text-light mx-md-2">
+                <div class="step">
+                    <h3 class="step-number">03.</h3>
+                    <h4 class="step-title">Growth</h4>
+                    <p class="step-description">
+                        After establishing trust and visibility, we concentrate on turning traffic into customers. This
+                        phase focuses on sales-driven content, ads, and strategies to boost conversions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 
 <section class="py-5 bg-light" id="pricing">
@@ -477,7 +551,7 @@
                     <div class="text-center m-4">
                         <h3>{% trans "Transform Your Business." %}</h3>
                         <h5 class="mt-4">{% trans "Let's work together" %}</h5>
-                        <button class="btn btn-footer rounded-pill mt-4">Get in touch!</button>
+                        <button class="btn btn-footer rounded-pill mt-4">GET IN TOUCH</button>
                     </div>
                 </div>
         
@@ -519,7 +593,7 @@
             </div>
             <div class="text-center pt-5">
           
-                <small>&copy; 2024 - PINITGROWTH - TODOS LOS DERECHOOS RESERVADOS.</small>
+                <small>&copy; 2024 - TRAVELGROWTH - TODOS LOS DERECHOOS RESERVADOS.</small>
             </div>
 </footer>
 
@@ -555,6 +629,7 @@
             });
         </script>
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.faq-question').forEach((button) => {
             button.addEventListener('click', () => {
             const isCollapsed = button.classList.contains('collapsed');
@@ -570,35 +645,33 @@
             });
             });
 
-    document.addEventListener('DOMContentLoaded', () => {
-        const logosContainer = document.querySelector('.logos');
-        let lastScrollTop = 0; // Para rastrear la posición del último scroll
-        let translateX = 0; // Para almacenar la posición actual del desplazamiento
+   
+    })
+    document.addEventListener('DOMContentLoaded', function () {
+            console.log('DOM completamente cargado');
 
-        window.addEventListener('scroll', () => {
-            const currentScrollTop = window.scrollY; // Posición actual del scroll
-            const delta = currentScrollTop - lastScrollTop; // Diferencia entre el último y el actual
+            const logos = document.querySelector('.logos'); // Selecciona el contenedor de logos
 
-            // Log para depurar
-            console.log('Scroll detected!');
-            console.log('Delta:', delta);
+            let scrollPosition = 0; // Para rastrear la posición acumulativa
+            let lastScrollY = window.scrollY; // Para rastrear la última posición de desplazamiento
 
-            // Si la diferencia es positiva, el usuario hace scroll hacia abajo (mover a la izquierda)
-            if (delta > 0) {
-                translateX -= 10; // Mueve los logos hacia la izquierda
-            }
-            // Si la diferencia es negativa, el usuario hace scroll hacia arriba (mover a la derecha)
-            else if (delta < 0) {
-                translateX += 10; // Mueve los logos hacia la derecha
-            }
+            window.addEventListener('scroll', () => {
+                console.log('hago scroll');
+                const scrollDelta = window.scrollY - lastScrollY; // Calcula el cambio en el desplazamiento vertical
+                lastScrollY = window.scrollY; // Actualiza la última posición de desplazamiento
 
-            // Aplica la transformación
-            logosContainer.style.transform = `translateX(${translateX}px)`;
+                // Calcula la nueva posición horizontal para los logos
+                scrollPosition -= scrollDelta * 1 // Ajusta la velocidad con el factor 0.1 (puedes modificarlo)
+                logos.style.transform = `translateX(${scrollPosition}px)`;
 
-            // Actualiza la posición del último scroll
-            lastScrollTop = currentScrollTop;
+                // Evita que los logos se desplacen fuera de los límites (opcional)
+                if (scrollPosition < -logos.scrollWidth) {
+                    scrollPosition = 0; // Resetea al llegar al final
+                } else if (scrollPosition > 0) {
+                    scrollPosition = -logos.scrollWidth; // Evita rebotes a la derecha
+                }
+            });
         });
-    });
 
 
 </script> 

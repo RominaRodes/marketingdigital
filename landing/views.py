@@ -16,3 +16,6 @@ def nosotros_view(request):
 
 def coming_soon(request):
     return render(request, 'landing/coming_soon.html')
+
+def final(request):
+    return render(request, 'landing/final.html')

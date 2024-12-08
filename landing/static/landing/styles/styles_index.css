@@ -8,7 +8,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Esto evitará que haya desbordamiento horizontal */
+    
 }
 
 
@@ -146,30 +146,26 @@ div.mision{
     margin:auto;
 }
 /*---------------specialize in section-------------------*/
-.specialize-section {
-    overflow: hidden;
+.logo-slider {
+   white-space: nowrap; /* Asegura que los logos estén en una línea horizontal */
     position: relative;
-}
-
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    overflow: hidden; /* Oculta el contenido que se desborda */
 }
 
 .logos {
-    display: flex;
-    align-items: center;
-    transition: transform 0.1s linear; /* Transición suave para el movimiento */
+    display: inline-flex; /* Alinea los logos en fila horizontal */
+    transform: translateX(0); /* Controla la posición inicial */
+    transition: transform 0.1s linear; /* Suaviza el movimiento */
 }
 
 .partner-logo {
-    height: 2rem;
-    margin: 0 20px;
+    height:2rem;
+    max-height: 3rem; /* Ajusta el tamaño de los logos según sea necesario */
+    margin: 0 15px; /* Espaciado entre logos */
+    display: inline-block;
     object-fit: contain;
 }
+
 
 /*--------------PRICING SECTION----------------*/
 .card-header-flex {
@@ -292,11 +288,14 @@ footer div small{
 
 
 @media (max-width: 990px) {
-    body{
-    background: blue;
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
 }
-    /* Remove border from the mobile menu toggle */
-    #mobile-menu.navbar-toggler {
+#mobile-menu.navbar-toggler {
         border: none;
     }
 
@@ -360,6 +359,18 @@ footer div small{
 #navbarNav > ul > li.nav-item.d-lg-none > form > div > select{
     /* border:none; */
     margin-right:0em;
+}
+
+/*--------sprecialized section-------------*/
+
+.partner-logo {
+    height:1rem;
+}
+/*-----------FAQ------------------*/
+
+.faq-container {
+  max-width: 85%;
+ 
 }
 
 
