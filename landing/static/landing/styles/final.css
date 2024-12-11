@@ -1,13 +1,13 @@
 
+
 :root{
     /* --primary-color: #C4E2F1; */
-  
     --footer-color:  #012F41;
     --card-bc-color:  #EDF2ED;
     --card-bc-color2:rgb(245,245,245);
     --contact-buttons:#F99B7D;
     --hover: rgb(8,217,214);
-    --text: #FFFFFF;
+    --text: RGB(230 230 221);
     --icon-text:#f1f1f1;
     --black: black;
     --card-1: rgb(150,218,226);
@@ -41,16 +41,22 @@ html, body {
     margin: 0;
     padding: 0;
 }
+.text-justify{
+text-align: justify;
+}
 
+h3{
+    font-size: 2rem;
+    font-weight: 900;
+}
+/*----------HEADER----------------------*/
 header{
     position: sticky;
     top: 0;
 } 
-
 .nav-item {
     font-size: 0.75rem;
 }
-
 .nav-link{
         color: var(--black);
     }
@@ -64,40 +70,31 @@ ul.dropdown-menu{
 .icon-wrapper {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
-
 .icon-wrapper:hover {
     background-color: var(--hover-bg-color);
     transform: scale(1.02); 
 }
-
 .icon-wrapper .icon {
     transition: transform 0.3s ease;
 }
-
 .icon-wrapper:hover .icon {
     transform: scale(1.1); 
 }
-
 .icon-laptop {
     color: var(--icon-color-laptop);
 }
-
 .icon-cursor {
     color: var(--icon-color-cursor);
 }
-
 .icon-seo {
     color: var(--icon-color-seo);
 }
-
 .icon-google {
     color: var(--icon-color-google);
 }
-
 .icon-instagram {
     color: var(--icon-color-instagram);
 }
-
 .icon-video {
     color: var(--icon-color-video);
 }
@@ -120,7 +117,7 @@ ul.dropdown-menu{
         width: 100%;
         height: 2px;
         background-color: var(--black); 
-        transition: all 0.8s ease; /* Smooth animation */
+        transition: all 0.8s ease; 
     }
 
     /* Cross effect */
@@ -165,6 +162,409 @@ ul.dropdown-menu{
 }
 
 
+/*--------MAIN HERO---------------*/
+main {
+    margin-top: 100px;
+}
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 1.25rem; 
+    text-align: justify;
+}
+#join-btn-main{
+    width:10rem;
+}
+.join-btn {
+    background:  var(--bs-blue);
+    color: var(--text); 
+    padding: 1.2rem 0.75rem;
+    font-size: 0.75rem;
+    position: relative;
+    border: none;
+    overflow: hidden;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 500px; 
+}
+
+.join-btn span,
+.join-btn::before {
+    display: inline-block;
+    position: absolute;
+    transform-origin: center;
+    transition: transform 0.8s ease, opacity 0.8s ease; 
+    backface-visibility: hidden; 
+}
+
+.join-btn span {
+    transform: rotateX(0deg) translateY(0); 
+    opacity: 1; 
+}
+
+.join-btn::before {
+    content: attr(data-hover); 
+    transform: rotateX(90deg) translateY(-100%); 
+    opacity: 0; 
+}
+
+.join-btn:hover span {
+    transform: rotateX(-90deg) translateY(100%);
+    opacity: 0; 
+}
+
+.join-btn:hover::before {
+    transform: rotateX(0deg) translateY(0); 
+    opacity: 1; 
+}
+
+/*---------------why section--------------------------------*/
+
+
+.card {
+    border-radius: 8px; 
+    background-color: rgb(237, 242, 237); 
+    padding: 20px;
+}
+.why-section .card {
+    transition: transform 0.3s ease;
+}
+
+.why-section .card:hover {
+    transform: translateY(-10px); 
+}
+
+.why-cards-logo {
+    width: 100px; 
+    height: 100px; 
+    object-fit: contain; 
+    margin: 0 auto 10px; 
+    max-height: 100px; 
+}
+.card-title {
+    font-size: 1.2rem;
+    margin-bottom: 15px; 
+    min-height: 48px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-top: 10px; 
+}
+hr {
+    margin: 15px auto; 
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    width:90%;
+}
+
+
+/*---------------specialize in section-------------------*/
+.logo-slider {
+    overflow:hidden;
+    white-space: nowrap;  
+    position: relative;
+    width: 100%;
+}
+
+.logos {
+    display: inline-flex; /* Alinea los logos en fila horizontal */
+    transform: translateX(0); /* Controla la posición inicial */
+    transition: transform 0.1s linear; /* Suaviza el movimiento */
+}
+
+.partner-logo {
+    height:15px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+/*-------------------Journey-section--------------------------------*/
+.digital-marketing-journey {
+    color: var(--text);
+    background: var(--bs-body-color);
+}
+
+.digital-marketing-journey .row {
+background: var(--bs-body-color);
+}
+
+#join-btn-steps{
+    width:7rem;
+}
+/*--------------PRICING SECTION----------------*/
+
+.price-card:hover {
+    background: var(--bs-body-color); 
+    color: var(--text); 
+    transform: scale(1.01); 
+    transition: transform 1s ease; 
+}
+
+.price-card:hover .price-card-btn {
+    background: var(--text); 
+    color: #000;
+}
+
+.price-card .price-card-btn:hover {
+    background: rgb(253, 241, 80); 
+    color: #000; 
+    border-color: rgb(253, 241, 80); 
+}
+.price-card-btn {
+    transition: background-color s ease, color 0.5s ease;
+}
+
+.price-card {
+    transition: background-color 1s ease, color 0.5s ease;
+}
+
+
+.card-header-flex {
+    flex-shrink: 0; 
+    min-height: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 100%;
+    padding: 20px; 
+}
+
+hr {
+    margin-top: 0; 
+    margin-bottom: 20px;
+}
+
+.price {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.list-unstyled {
+    margin: 0;
+    padding: 0;
+}
+
+.list-unstyled li {
+    display: flex;
+    align-items: center; 
+    font-size: 0.95rem;
+}
+
+.list-unstyled i {
+    font-size: 1.2rem; 
+    margin-right: 10px; 
+    color: #28a745; 
+
+}
+
+.price-card h4 {
+    margin-bottom: 1rem; /* Espaciado inferior del título */
+}
+
+.price-card button {
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    font-size: 1rem;
+}
+
+
+
+
+
+/*---------------FAQ-----------------*/
+/* General Section Styles */
+.faq-section {
+  padding: 3rem 1rem;
+  background-color: rgb(237,242,237);
+}
+
+.faq-container {
+  margin: 0 auto;
+}
+
+/* FAQ Item Styles */
+.faq-item {
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Question Button Styles */
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.faq-question:focus {
+  outline: none;
+}
+
+.faq-question strong {
+  font-weight: bold;
+}
+
+/* Answer Styles */
+.faq-answer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+/*---------------FOOTER---------------------------*/
+footer {
+    background-color: var(--black);
+}
+.footer-logo {
+    width:50%;
+    height: auto;
+}
+
+footer a {
+    color:var(--text);
+}
+footer h5 {
+    color:var(--text);
+}
+
+footer > div.container  > div h3{
+color:var(--text);
+font-size: 2rem;
+}
+
+
+.btn-footer {
+    background: rgb(253, 241, 80); /* Fondo amarillo fijo */
+    color: #000; /* Texto negro */
+    width:7rem;
+    height:2rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    position: relative;
+    border: none;
+    overflow: hidden; /* Evita que el texto se salga */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease; /* Transición suave del fondo */
+    perspective: 500px; /* Añade perspectiva para el efecto 3D */
+}
+
+.btn-footer:hover {
+    background: rgb(253, 241, 80); /* Asegura que el fondo no cambie */
+}
+
+.btn-footer span,
+.btn-footer::before {
+    display: inline-block;
+    position: absolute;
+    transform-origin: center;
+    transition: transform 0.8s ease, opacity 0.8s ease; /* Ajusta velocidad de rotación y opacidad */
+    backface-visibility: hidden; /* Oculta la parte trasera */
+}
+
+.btn-footer span {
+    transform: rotateX(0deg) translateY(0); /* Texto inicial sin movimiento */
+    opacity: 1; /* Totalmente visible */
+}
+
+.btn-footer::before {
+    content: attr(data-hover); /* Texto alternativo */
+    color: #000; /* Mismo color que el texto principal */
+    transform: rotateX(90deg) translateY(-100%); /* Inicia desplazado hacia arriba y oculto */
+    opacity: 0; /* Oculto inicialmente */
+}
+
+.btn-footer:hover span {
+    transform: rotateX(-90deg) translateY(100%); /* Rota hacia atrás y se desplaza hacia abajo */
+    opacity: 0; /* Desaparece gradualmente */
+}
+
+.btn-footer:hover::before {
+    transform: rotateX(0deg) translateY(0); /* Rota hacia adelante y se posiciona en el centro */
+    opacity: 1; /* Aparece gradualmente */
+}
+
+
+
+footer div small{
+    color:var(--text);
+    font-size: 0.5rem;
+}
+
+@media screen and (min-width:768px){
+
+/*-----------------why-section-------------------------*/
+.card .why-cards-logo {
+    display: block;
+    margin: 0 auto 10px; /* Center image and add space below */
+    max-width: 150px;
+    max-height: 150px; /* Default size for large screens */
+    transition: all 0.3s ease; /* Smooth resizing */
+}
+
+/*---------------specialize in section-------------------*/
+.partner-logo {
+    height:20px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/*------------Step section------------------*/
+.steps-section .row{
+    max-width: 800px;
+    margin: auto;
+}
+    .steps-section .row {
+        display: flex;
+        flex-wrap: nowrap; 
+        gap: 1rem;
+    }
+
+    .steps-section .col-md-4 {
+        margin: 0; 
+    }
+/*----pricing----------------*/
+
+
+/*-------------footer---------------*/
+.footer-logo {
+    width:40%;
+   
+}
+
+}
 
 @media screen and (min-width:992px){
     header {
@@ -189,5 +589,23 @@ li.nav-item.dropdown {
     .dropdown-menu a .d-flex{
     transition: all 0.4s;
         }
-    
+
+/*----------HERO------*/
+.title {
+    font-size: 4rem;
+}
+.subtitle{
+    text-align:center;
+}
+
+/*---------------FAQ-----------------*/
+.faq-container {
+  max-width: 70%;
+}
+
+/*-------------footer---------------*/
+.footer-logo {
+    width:25%;
+   
+}
 }
