@@ -164,8 +164,13 @@ ul.dropdown-menu{
 
 /*--------MAIN HERO---------------*/
 main {
-    margin-top: 100px;
+    margin-top: 86px;
 }
+/* main {
+    background: url("/static/landing/img/fondo.jpg") center/cover fixed;
+} */
+
+
 .title {
     font-size: 2.5rem;
     font-weight: 800;
@@ -223,20 +228,36 @@ main {
 }
 
 /*---------------why section--------------------------------*/
+.why-section .container{
+    width:75%;
+}
+/* Animación inicial (aparecer con desplazamiento hacia arriba) */
+.why-section .card {
+    padding: 0px;
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateY(40px); /* Desplazamiento inicial hacia abajo */
+    transition: opacity 1s ease, transform 1s ease; /* Suavizar animación */
+}
 
+/* Animación cuando el elemento está en vista */
+.why-section .card.in-view {
+    opacity: 1; /* Mostrar gradualmente */
+    transform: translateY(0); /* Posición final */
+}
+
+/* Efecto hover: desplazamiento, aumento de tamaño y sombra */
+.why-section .card:hover {
+    transform: translateX(-10px) scale(1.01); /* Subir y agrandar ligeramente */
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.1); /* Sombra realista en el lado derecho e inferior */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
 
 .card {
     border-radius: 8px; 
     background-color: rgb(237, 242, 237); 
-    padding: 20px;
-}
-.why-section .card {
-    transition: transform 0.3s ease;
+
 }
 
-.why-section .card:hover {
-    transform: translateY(-10px); 
-}
 
 .why-cards-logo {
     width: 100px; 
@@ -247,7 +268,7 @@ main {
 }
 .card-title {
     font-size: 1.2rem;
-    margin-bottom: 15px; 
+    /* margin-bottom: 15px;  */
     min-height: 48px; 
     display: flex;
     align-items: center;
@@ -259,7 +280,7 @@ main {
 .card-text {
     font-size: 0.95rem;
     line-height: 1.5;
-    margin-top: 10px; 
+    /* margin-top: 10px;  */
 }
 hr {
     margin: 15px auto; 
@@ -291,6 +312,10 @@ hr {
 }
 
 /*-------------------Journey-section--------------------------------*/
+section#steps-section {
+    scroll-margin-top: 86px;
+}
+
 .digital-marketing-journey {
     color: var(--text);
     background: var(--bs-body-color);
@@ -303,7 +328,17 @@ background: var(--bs-body-color);
 #join-btn-steps{
     width:7rem;
 }
+
+#steps-section .card{
+    padding: 20px;
+}
 /*--------------PRICING SECTION----------------*/
+section#pricing {
+    scroll-margin-top: 86px;
+}
+.price-card{
+    background-color: var(--bs-light);
+}
 
 .price-card:hover {
     background: var(--bs-body-color); 
@@ -315,6 +350,7 @@ background: var(--bs-body-color);
 .price-card:hover .price-card-btn {
     background: var(--text); 
     color: #000;
+
 }
 
 .price-card .price-card-btn:hover {
@@ -323,7 +359,8 @@ background: var(--bs-body-color);
     border-color: rgb(253, 241, 80); 
 }
 .price-card-btn {
-    transition: background-color s ease, color 0.5s ease;
+    transition: background-color 1s ease, color 0.5s ease;
+    cursor:pointer;
 }
 
 .price-card {
@@ -377,70 +414,64 @@ hr {
 }
 
 .price-card h4 {
-    margin-bottom: 1rem; /* Espaciado inferior del título */
+    margin-bottom: 1rem; /
 }
 
 .price-card button {
-    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    padding: 10px 20px; 
     font-size: 1rem;
+    width:100%;
 }
 
-
-
-
-
 /*---------------FAQ-----------------*/
-/* General Section Styles */
+section#faq {
+    scroll-margin-top: 86px;
+}
 .faq-section {
-  padding: 3rem 1rem;
-  background-color: rgb(237,242,237);
+    padding: 3rem 1rem;
+    background-color: rgb(237, 242, 237);
 }
 
 .faq-container {
-  margin: 0 auto;
+    margin: 0 auto;
+    max-width: 800px; 
 }
 
-/* FAQ Item Styles */
 .faq-item {
-  margin-bottom: 1.5rem;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: #fff;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 
 .faq-item:hover {
   transform: translateY(-1px);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-
-/* Question Button Styles */
-.faq-question {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: none;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  cursor: pointer;
+.faq-item:hover{
+    transform: scale(1.01); 
+    transition: transform 1s ease-in-out; 
+}
+.accordion-button {
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border: none;
 }
 
-.faq-question:focus {
-  outline: none;
+.accordion-button:focus {
+    box-shadow: none;
 }
 
-.faq-question strong {
-  font-weight: bold;
+/* Accordion Body Styles */
+.accordion-body {
+    padding: 1rem;
+    font-size: 0.95rem;
+    background-color: white;
 }
 
-/* Answer Styles */
-.faq-answer {
-  padding: 1rem 1.5rem;
-  border-top: 1px solid #ddd;
-}
 
 /*---------------FOOTER---------------------------*/
 footer {
@@ -463,6 +494,10 @@ color:var(--text);
 font-size: 2rem;
 }
 
+.faq-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
 
 .btn-footer {
     background: rgb(253, 241, 80); /* Fondo amarillo fijo */
@@ -526,12 +561,15 @@ footer div small{
 @media screen and (min-width:768px){
 
 /*-----------------why-section-------------------------*/
+.why-section .container{
+    width:100%;
+}
 .card .why-cards-logo {
     display: block;
-    margin: 0 auto 10px; /* Center image and add space below */
+    margin: 0 auto 10px; 
     max-width: 150px;
-    max-height: 150px; /* Default size for large screens */
-    transition: all 0.3s ease; /* Smooth resizing */
+    max-height: 150px; 
+    transition: all 0.3s ease; 
 }
 
 /*---------------specialize in section-------------------*/
@@ -597,6 +635,12 @@ li.nav-item.dropdown {
 .subtitle{
     text-align:center;
 }
+
+/*------------why-section-----------------*/
+.why-section .container{
+    width:75%;
+}
+
 
 /*---------------FAQ-----------------*/
 .faq-container {

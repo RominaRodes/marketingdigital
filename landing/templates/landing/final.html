@@ -60,7 +60,7 @@
                             </form>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#digital-marketing-journey">{% trans "HOW WE WORK" %}</a>
+                            <a class="nav-link" href="#steps-section">{% trans "HOW WE WORK" %}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#pricing" role="button" data-bs-toggle="dropdown"
@@ -156,9 +156,10 @@
     </header>
 
 <main class="bg-light">
-        <section class="hero pt-md-5">
+        <section class="hero">
             <div class="container">
-                <h1 class="title text-center py-3">Get Found, Get Booked,<br>Grow your business!</h1>
+            
+                <h1 class="title text-center py-5">Get Found, Get Booked,<br>Grow your business!</h1>
         
                 <div class="mision pt-3">
                     <h2 class="subtitle pb-3 text-center">{% trans "Optimize your digital marketing, enhance your visibility on TripAdvisor, and drive bookings like never before." %}</h2>
@@ -175,7 +176,7 @@
             </div>
         </section>
 
-<section class="specialize-section pt-3">
+<section class="specialize-section bg-light p-5">
     <div class="title-container container-fluid">
         <h5 class="text-center py-3">We specialize in</h5>
     </div>
@@ -203,12 +204,12 @@
     </div>
 </section>
 
-<section class="py-5 bg-light why-section">
+<section class="py-5 why-section">
     <div class="container text-center">
         <h3 class="mb-4">Why Travel Growth?</h3>
         <div class="row">
             <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card border-0 shadow-sm h-100">
+            <div class="card border-0  h-100">
                 <div class="card-body align-content-center">
                     <img src="{% static 'landing/img/visibility.png' %}" alt="visibility" class="why-cards-logo">
                     <h5 class="card-title fw-bold">{% trans "Maximize Visibility" %}</h5>
@@ -220,7 +221,7 @@
             </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0  h-100">
                     <div class="card-body align-content-center">
                         <img src="{% static 'landing/img/bookings.png' %}" alt="bookings" class="why-cards-logo">
                         <h5 class="card-title text-center fw-bold">{% trans "Boost Bookings" %}</h5>
@@ -231,7 +232,7 @@
             </div>
 
             <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0  h-100">
                     <div class="card-body align-content-center">
                         <img src="{% static 'landing/img/strategies.png' %}" alt="strategies" class="why-cards-logo">
                         <h5 class="card-title text-center fw-bold">{% trans "Personalized Strategies" %}</h5>
@@ -241,7 +242,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 mb-4">
-                <div class="card border-0 shadow-sm h-100">
+                <div class="card border-0  h-100">
                     <div class="card-body align-content-center">
                         <img src="{% static 'landing/img/implementation.png' %}" alt="strategies" class="why-cards-logo">
                         <h5 class="card-title text-center fw-bold">{% trans "Effortless Implementation" %}</h5>
@@ -254,10 +255,10 @@
     </div>
 </section>
 
-<section id="digital-marketing-journey" class="digital-marketing-journey pb-3">
+<section id="steps-section" class="digital-marketing-journey pb-3">
     <div class="container text-center">
         <div class="introduction py-4">
-            <h3 class="mb-4">Start Your Travel & Tourism Digital Marketing Journey</h3>
+            <h3 class="mb-4 py-3">Start Your Travel & Tourism Digital Marketing Journey</h3>
             <p class="lead mb-4">
             No matter the size of your business—whether you run a small family tour or a large-scale tourism
             operation—we dedicate
@@ -271,7 +272,7 @@
         </div>
 
         <h4 class="text-center fw-bold pt-3">{% trans "Three Steps approach" %}</h4>
-        <p class="mb-4">
+        <p class="mb-4 d-none d-md-block">
                     In today’s digital world, it’s essential to have a focused marketing approach. With so many platforms and
                     touchpoints,
                     your strategy must be aligned and effective. That’s why we work closely with you to understand your goals
@@ -319,7 +320,7 @@
 <section class="py-5" id="pricing">
     <div class="container">
         <h2 class="mb-5 text-center fw-bold fs-1">{% trans "Choose Your Plan" %}</h2>
-    <div class="row g-2 justify-content-center">
+        <div class="row g-2 justify-content-center">
 
     <div class="col-md-4">
         <div class="price-card border border-2 rounded shadow-sm h-100 d-flex">
@@ -334,7 +335,9 @@
                     <p>{% trans "Perfect for businesses starting to enhance their online presence and attract more travellers!" %}</p>
                 </div>
                 <div class="my-3 d-grid">
-                    <button class="btn btn-dark price-card-btn">{% trans "GET STARTED" %}</button>
+                    <a href="mailto:hello@travelgrowth.ai">
+                        <button class="btn btn-dark price-card-btn">{% trans "GET STARTED" %}</button>
+                    </a>
                 </div>
                 <hr>
                 <div class="flex-fill">
@@ -367,8 +370,8 @@
                     <p class="fw-bold">{% trans "TripAdvisor Ad Express" %}</p>
                     <p>{% trans "Ideal for businesses ready to engage more effectively with potential customers!" %}</p>
                 </div>
-                <div class="my-3 d-grid">
-                    <button class="btn btn-dark  price-card-btn">{% trans "GET STARTED" %}</button>
+                <div class="my-3 ">
+                   <a href="mailto:hello@travelgrowth.ai"><button class="btn btn-dark  price-card-btn">{% trans "GET STARTED" %}</button></a> 
                 </div>
                 <hr>
                 <div class="flex-fill">
@@ -402,8 +405,9 @@
                         <p>{% trans "For businesses seeking robust growth through professional management and strategic advertising!" %}</p>
                     </div>
                     <div class="my-3 d-grid">
+                        <a href="hello@travelgrowth.ai">
                         <button class="btn btn-dark  price-card-btn">{% trans "CONTACT US" %}</button>
-
+                        </a>
                     </div>
                     <hr>
                     <div class="flex-fill">
@@ -432,69 +436,65 @@
     </div>
 </section>
 
-
 <section id="faq" class="faq-section container-fluid">
-    <div class=" faq-container">
+    <div>
         <h3 class="text-center mb-5">{% trans "Frequently Asked Questions" %}</h3>
+    </div>
+    <div class="container">
+        <div class="accordion faq-container" id="faqAccordion">
+            <!-- Pregunta 1 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+                        <strong>{% trans "Why should I invest in a TripAdvisor Business Listing and Viator Product Creation?" %}</strong>
+                    </button>
+                </h2>
+                <div id="faqCollapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">{% trans "These platforms are trusted by millions of travelers worldwide. A professional presence increases visibility, builds trust, and drives bookings." %}
+                    </div>
+                </div>
+            </div>
 
-        <!-- Pregunta 1 -->
-        <div class="faq-item">
-            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
-                <strong>{% trans "Why should I invest in a TripAdvisor Business Listing and Viator Product Creation?" %}</strong>
-                <span class="faq-chevron">
-                    <i class="bi bi-caret-down-fill"></i>
-                </span>
-            </button>
-            <div id="faqCollapse1" class="collapse faq-answer">
-                <p>{% trans "These platforms are trusted by millions of travelers worldwide. A professional presence increases visibility, builds trust, and drives bookings." %}</p>
+            <!-- Pregunta 2 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+                        <strong>{% trans "What does the $500/month Ad Express service include?" %}</strong>
+                    </button>
+                </h2>
+                <div id="faqCollapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">{% trans "Our Ad Express service includes custom ad creation, performance monitoring, and detailed monthly reporting. It’s a comprehensive solution to maximize your presence on TripAdvisor." %}</div>
+                </div>
+            </div>
+
+            <!-- Pregunta 3 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+                        <strong>{% trans "Can I cancel the Ad Express service at any time?" %}</strong>
+                    </button>
+                </h2>
+                <div id="faqCollapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">{% trans "Yes, we offer flexible terms. However, we recommend at least three months to see the full benefits of the campaign." %}</div>
+                </div>
+            </div>
+
+            <!-- Pregunta 4 -->
+            <div class="accordion-item faq-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+                        <strong>{% trans "What’s the difference between a business listing and an Ad Express campaign?" %}</strong>
+                    </button>
+                </h2>
+                <div id="faqCollapse4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">{% trans "A business listing establishes your presence on TripAdvisor and Viator. An Ad Express campaign enhances visibility by placing your business in front of more travelers actively searching for services." %}</div>
+                </div>
             </div>
         </div>
-
-        <!-- Pregunta 2 -->
-        <div class="faq-item">
-            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-                <strong>{% trans "What does the $500/month Ad Express service include?" %}</strong>
-                <span class="faq-chevron">
-                    <i class="bi bi-caret-down-fill"></i>
-                </span>
-            </button>
-            <div id="faqCollapse2" class="collapse faq-answer">
-                <p>{% trans "Our Ad Express service includes custom ad creation, performance monitoring, and detailed
-                    monthly reporting. It’s a comprehensive solution to maximize your presence on TripAdvisor." %}</p>
-            </div>
-        </div>
-
-        <!-- Pregunta 3 -->
-        <div class="faq-item">
-            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-                <strong>{% trans "Can I cancel the Ad Express service at any time?" %}</strong>
-                <span class="faq-chevron">
-                    <i class="bi bi-caret-down-fill"></i>
-                </span>
-            </button>
-            <div id="faqCollapse3" class="collapse faq-answer">
-                <p>{% trans "Yes, we offer flexible terms. However, we recommend at least three months to see the full benefits of the campaign." %}</p>
-            </div>
-        </div>
-
-        <!-- Pregunta 4 -->
-        <div class="faq-item">
-            <button class="faq-question collapsed" type="button" data-bs-toggle="collapse"
-                data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-                <strong>{% trans "What’s the difference between a business listing and an Ad Express campaign?" %}</strong>
-                <span class="faq-chevron">
-                    <i class="bi bi-caret-down-fill"></i>
-                </span>
-            </button>
-            <div id="faqCollapse4" class="collapse faq-answer">
-                <p>{% trans "A business listing establishes your presence on TripAdvisor and Viator. An Ad Express campaign enhances visibility by placing your business in front of more travelers actively searching for services." %}
-                </p>
-            </div>
-        </div>
-
     </div>
 </section>
 
@@ -546,10 +546,7 @@
             });
         });
   
-
-
-        
-   // Desplazamiento logos scroll
+  // Desplazamiento logos scroll
     const logos = document.querySelector('.logos');
     let scrollPosition = 0; // Para rastrear la posición acumulativa
     let lastScrollY = window.scrollY; // Para rastrear la última posición de desplazamiento
@@ -569,8 +566,22 @@
             scrollPosition = -logos.scrollWidth / 2;
         }
     });
-    })
-        
+   
+
+   
+    const cards = document.querySelectorAll('.why-section .card');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.2 }); // Detectar cuando el 20% del elemento sea visible
+
+        cards.forEach(card => observer.observe(card));
+   
+         })
     </script>
 
 
