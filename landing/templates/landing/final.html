@@ -155,11 +155,12 @@
         </nav>
     </header>
 
-<main class="bg-light">
+<main>
         <section class="hero">
-            <div class="container">
+            <div class="fluid">
+              <div class="hero-content text-light my-5">
             
-                <h1 class="title text-center py-5">Get Found, Get Booked,<br>Grow your business!</h1>
+                <h1 class="title text-center py-3 pt-md-5 pb-md-3">Get Found, Get Booked,<br>Grow your business!</h1>
         
                 <div class="mision pt-3">
                     <h2 class="subtitle pb-3 text-center">{% trans "Optimize your digital marketing, enhance your visibility on TripAdvisor, and drive bookings like never before." %}</h2>
@@ -173,33 +174,43 @@
             </div> 
                     
             </div>
+            </div>    
             </div>
+          
         </section>
 
-<section class="specialize-section bg-light p-5">
+<section class="specialize-section bg-light py-2 py-md-5">
     <div class="title-container container-fluid">
-        <h5 class="text-center py-3">We specialize in</h5>
+        <h5 class="text-center pb-3">We specialize in</h5>
     </div>
     <div class="logo-slider">
         <div class="logos">
             <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
             <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
-            <img src="{% static 'landing/img/google-business.png' %}" alt="Google Ads" class="partner-logo">
+            <img src="{% static 'landing/img/google-business.png' %}" alt="Google Business" class="partner-logo">
             <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
             <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
             <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
-            <img src="{% static 'landing/img/yelp-logos.png' %}" alt="Google Ads" class="partner-logo">
-            <img src="{% static 'landing/img/kayak-logo.png' %}" alt="Google Ads" class="partner-logo">
+            <img src="{% static 'landing/img/yelp-logos.png' %}" alt="Yelp" class="partner-logo">
+            <img src="{% static 'landing/img/kayak-logo.png' %}" alt="Kayak" class="partner-logo">
             <!-- Duplicated for infinite scroll effect -->
             <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
             <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
-            <img src="{% static 'landing/img/google-business.png' %}" alt="Google Ads" class="partner-logo">
+            <img src="{% static 'landing/img/google-business.png' %}" alt="Google Business" class="partner-logo">
             <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
             <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
             <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
-            <img src="{% static 'landing/img/yelp-logos.png' %}" alt="Google Ads" class="partner-logo">
-            <img src="{% static 'landing/img/kayak-logo.png' %}" alt="Google Ads" class="partner-logo">
-
+            <img src="{% static 'landing/img/yelp-logos.png' %}" alt="Yelp" class="partner-logo">
+            <img src="{% static 'landing/img/kayak-logo.png' %}" alt="Kayak" class="partner-logo">
+<!-- Duplicated for infinite scroll effect -->
+                        <img src="{% static 'landing/img/google-ads-logo.png' %}" alt="Google Ads" class="partner-logo">
+                        <img src="{% static 'landing/img/meta-logo.png' %}" alt="Meta" class="partner-logo">
+                        <img src="{% static 'landing/img/google-business.png' %}" alt="Google Business" class="partner-logo">
+                        <img src="{% static 'landing/img/trip-advisor-logo.png' %}" alt="TripAdvisor" class="partner-logo">
+                        <img src="{% static 'landing/img/viator-logo.png' %}" alt="Viator" class="partner-logo">
+                        <img src="{% static 'landing/img/expedia-logo.png' %}" alt="Expedia" class="partner-logo">
+                        <img src="{% static 'landing/img/yelp-logos.png' %}" alt="Yelp" class="partner-logo">
+                        <img src="{% static 'landing/img/kayak-logo.png' %}" alt="Kayak" class="partner-logo">
         </div>
     </div>
 </section>
@@ -209,7 +220,7 @@
         <h3 class="mb-4">Why Travel Growth?</h3>
         <div class="row">
             <div class="col-md-6 col-lg-3 mb-4">
-            <div class="card border-0  h-100">
+            <div class="card border-0 h-100">
                 <div class="card-body align-content-center">
                     <img src="{% static 'landing/img/visibility.png' %}" alt="visibility" class="why-cards-logo">
                     <h5 class="card-title fw-bold">{% trans "Maximize Visibility" %}</h5>
@@ -316,10 +327,9 @@
     </div>
 </section>
 
-
 <section class="py-5" id="pricing">
     <div class="container">
-        <h2 class="mb-5 text-center fw-bold fs-1">{% trans "Choose Your Plan" %}</h2>
+        <h3 class="mb-5 text-center fw-bold ">{% trans "Choose Your Plan" %}</h3>
         <div class="row g-2 justify-content-center">
 
     <div class="col-md-4">
@@ -546,29 +556,63 @@
             });
         });
   
-  // Desplazamiento logos scroll
-    const logos = document.querySelector('.logos');
-    let scrollPosition = 0; // Para rastrear la posición acumulativa
-    let lastScrollY = window.scrollY; // Para rastrear la última posición de desplazamiento
+      const logos = document.querySelector('.logos');
+        let scrollPosition = 0; 
+        let lastScrollY = window.scrollY; 
+        let direction = 1; 
 
-    window.addEventListener('scroll', () => {
-        const scrollDelta = window.scrollY - lastScrollY; // Cambio en el desplazamiento vertical
-        lastScrollY = window.scrollY; // Actualiza la última posición de desplazamiento
-
-        // Calcula la nueva posición horizontal para los logos
-        scrollPosition -= scrollDelta * 0.3; // Ajusta la velocidad con el factor 0.3
-        logos.style.transform = `translateX(${scrollPosition}px)`;
-
-        // Resetea la posición cuando el desplazamiento supera el ancho total
-        if (scrollPosition <= -logos.scrollWidth / 2) {
-            scrollPosition = 0;
-        } else if (scrollPosition > 0) {
-            scrollPosition = -logos.scrollWidth / 2;
+        // Calcula y apl
+        function setInitialPosition() {
+            const logosWidth = logos.scrollWidth / 3; // Una repetición completa de los logos
+            scrollPosition = -logosWidth / 2; // Centra en la segunda repetición
+            logos.style.transform = `translateX(${scrollPosition}px)`;
+            console.log(`Posición inicial configurada: ${scrollPosition}`);
         }
-    });
-   
 
-   
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        function handleScroll() {
+            if (!isElementInViewport(logos)) return; 
+            
+            scrollPosition += direction * 2; 
+            logos.style.transform = `translateX(${scrollPosition}px)`;
+
+            // Ajusta la posición para el efecto infinito
+            // const logosWidth = logos.scrollWidth / 3; // Ancho de una repetición
+            // if (scrollPosition <= -logosWidth) {
+            //     scrollPosition += logosWidth;
+            // } else if (scrollPosition >= 0) {
+            //     scrollPosition -= logosWidth;
+            // }
+        }
+
+        // Detecta el scroll y ajusta la dirección
+        function onScroll() {
+            if (!isElementInViewport(logos)) return; // No actualiza la dirección si no está visible
+
+            // Cambia la dirección según el movimiento del scroll
+            if (window.scrollY > lastScrollY) {
+                direction = 1; // Desplazar hacia la derecha
+            } else if (window.scrollY < lastScrollY) {
+                direction = -1; // Desplazar hacia la izquierda
+            }
+
+            lastScrollY = window.scrollY; // Actualiza la última posición de scroll
+        }
+
+        setInitialPosition();
+
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('scroll', handleScroll);
+
+
+
+
+
+        
     const cards = document.querySelectorAll('.why-section .card');
 
         const observer = new IntersectionObserver((entries) => {
@@ -580,8 +624,8 @@
         }, { threshold: 0.2 }); // Detectar cuando el 20% del elemento sea visible
 
         cards.forEach(card => observer.observe(card));
-   
-         })
+
+        })
     </script>
 
 

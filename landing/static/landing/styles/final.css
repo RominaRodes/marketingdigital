@@ -46,7 +46,7 @@ text-align: justify;
 }
 
 h3{
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 900;
 }
 /*----------HEADER----------------------*/
@@ -166,10 +166,14 @@ ul.dropdown-menu{
 main {
     margin-top: 86px;
 }
-/* main {
-    background: url("/static/landing/img/fondo.jpg") center/cover fixed;
-} */
-
+ main {
+    background: url("/static/landing/img/playa.jpg") center/cover fixed;
+} 
+.hero-content{
+    width:90%;
+    margin:auto;
+    background: var(--bs-body-color)
+}
 
 .title {
     font-size: 2.5rem;
@@ -291,24 +295,25 @@ hr {
 
 
 /*---------------specialize in section-------------------*/
+
 .logo-slider {
-    overflow:hidden;
-    white-space: nowrap;  
+    overflow: hidden; /* Oculta el exceso */
     position: relative;
-    width: 100%;
 }
 
 .logos {
-    display: inline-flex; /* Alinea los logos en fila horizontal */
-    transform: translateX(0); /* Controla la posición inicial */
-    transition: transform 0.1s linear; /* Suaviza el movimiento */
+    display: flex; /* Flex para alinear las imágenes en fila */
+    white-space: nowrap; /* Evita que las imágenes se envuelvan */
+    will-change: transform; /* Mejora el rendimiento en animaciones */
+    transition: transform 0.1s ease-out; /* Para suavizar pequeños cambios */
 }
 
-.partner-logo {
-    height:15px;
-    margin-left: 10px;
-    margin-right: 10px;
 
+
+.partner-logo {
+    height:10px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 /*-------------------Journey-section--------------------------------*/
@@ -336,6 +341,7 @@ background: var(--bs-body-color);
 section#pricing {
     scroll-margin-top: 86px;
 }
+
 .price-card{
     background-color: var(--bs-light);
 }
@@ -559,7 +565,9 @@ footer div small{
 }
 
 @media screen and (min-width:768px){
-
+.hero-content{
+    width:85%;
+}
 /*-----------------why-section-------------------------*/
 .why-section .container{
     width:100%;
@@ -629,6 +637,9 @@ li.nav-item.dropdown {
         }
 
 /*----------HERO------*/
+.hero-content{
+    width:75%;
+}
 .title {
     font-size: 4rem;
 }
@@ -639,6 +650,10 @@ li.nav-item.dropdown {
 /*------------why-section-----------------*/
 .why-section .container{
     width:75%;
+}
+.partner-logo {
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 
